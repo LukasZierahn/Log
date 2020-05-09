@@ -6,7 +6,90 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8050AA992466C984006A13E8 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA7F2466C983006A13E8 /* Camera.cpp */; };
+		8050AA9A2466C984006A13E8 /* DrawableObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA812466C983006A13E8 /* DrawableObject.cpp */; };
+		8050AA9B2466C984006A13E8 /* ModelData.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA822466C983006A13E8 /* ModelData.hpp */; };
+		8050AA9C2466C984006A13E8 /* ModelLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA832466C983006A13E8 /* ModelLoader.cpp */; };
+		8050AA9D2466C984006A13E8 /* ColoredObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA842466C983006A13E8 /* ColoredObject.cpp */; };
+		8050AA9E2466C984006A13E8 /* ColorData.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA852466C983006A13E8 /* ColorData.hpp */; };
+		8050AA9F2466C984006A13E8 /* TexturedObject.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA862466C983006A13E8 /* TexturedObject.hpp */; };
+		8050AAA02466C984006A13E8 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA872466C983006A13E8 /* Texture.cpp */; };
+		8050AAA12466C984006A13E8 /* ColorData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA882466C983006A13E8 /* ColorData.cpp */; };
+		8050AAA22466C984006A13E8 /* TexturedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA892466C983006A13E8 /* TexturedObject.cpp */; };
+		8050AAA32466C984006A13E8 /* Texture.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA8A2466C983006A13E8 /* Texture.hpp */; };
+		8050AAA42466C984006A13E8 /* DrawableObject.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA8B2466C983006A13E8 /* DrawableObject.hpp */; };
+		8050AAA52466C984006A13E8 /* ModelData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA8C2466C983006A13E8 /* ModelData.cpp */; };
+		8050AAA62466C984006A13E8 /* ColoredObject.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA8D2466C983006A13E8 /* ColoredObject.hpp */; };
+		8050AAA72466C984006A13E8 /* ModelLoader.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA8E2466C983006A13E8 /* ModelLoader.hpp */; };
+		8050AAA82466C984006A13E8 /* Render.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA8F2466C984006A13E8 /* Render.hpp */; };
+		8050AAA92466C984006A13E8 /* Camera.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA952466C984006A13E8 /* Camera.hpp */; };
+		8050AAAA2466C984006A13E8 /* Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA962466C984006A13E8 /* Log.h */; };
+		8050AAAB2466C984006A13E8 /* Include.h in Headers */ = {isa = PBXBuildFile; fileRef = 8050AA972466C984006A13E8 /* Include.h */; };
+		8050AAAC2466C984006A13E8 /* Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8050AA982466C984006A13E8 /* Render.cpp */; };
+		8050AAAF2466C990006A13E8 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8050AAAE2466C98F006A13E8 /* OpenGL.framework */; };
+		8050AAB22466C9B2006A13E8 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8050AAB02466C9A1006A13E8 /* libGLEW.2.1.0.dylib */; };
+		8050AAB32466C9B2006A13E8 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 8050AAB02466C9A1006A13E8 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8050AAB52466C9C4006A13E8 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8050AAB12466C9A1006A13E8 /* libGLEW.a */; };
+		8050AAB72466C9D8006A13E8 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8050AAB62466C9D8006A13E8 /* libglfw.3.3.dylib */; };
+		8050AAB82466C9D8006A13E8 /* libglfw.3.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 8050AAB62466C9D8006A13E8 /* libglfw.3.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8050AABA2466CA09006A13E8 /* libLog.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80E9C92E2466211A000D221B /* libLog.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8050AAB42466C9B2006A13E8 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8050AAB82466C9D8006A13E8 /* libglfw.3.3.dylib in Embed Libraries */,
+				8050AAB32466C9B2006A13E8 /* libGLEW.2.1.0.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8050AAB92466C9EB006A13E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Users/lukas/Documents/Projects/Log/lib;
+			dstSubfolderSpec = 0;
+			files = (
+				8050AABA2466CA09006A13E8 /* libLog.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8050AA7F2466C983006A13E8 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		8050AA812466C983006A13E8 /* DrawableObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawableObject.cpp; sourceTree = "<group>"; };
+		8050AA822466C983006A13E8 /* ModelData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModelData.hpp; sourceTree = "<group>"; };
+		8050AA832466C983006A13E8 /* ModelLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModelLoader.cpp; sourceTree = "<group>"; };
+		8050AA842466C983006A13E8 /* ColoredObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColoredObject.cpp; sourceTree = "<group>"; };
+		8050AA852466C983006A13E8 /* ColorData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ColorData.hpp; sourceTree = "<group>"; };
+		8050AA862466C983006A13E8 /* TexturedObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TexturedObject.hpp; sourceTree = "<group>"; };
+		8050AA872466C983006A13E8 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		8050AA882466C983006A13E8 /* ColorData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorData.cpp; sourceTree = "<group>"; };
+		8050AA892466C983006A13E8 /* TexturedObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexturedObject.cpp; sourceTree = "<group>"; };
+		8050AA8A2466C983006A13E8 /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		8050AA8B2466C983006A13E8 /* DrawableObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawableObject.hpp; sourceTree = "<group>"; };
+		8050AA8C2466C983006A13E8 /* ModelData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModelData.cpp; sourceTree = "<group>"; };
+		8050AA8D2466C983006A13E8 /* ColoredObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ColoredObject.hpp; sourceTree = "<group>"; };
+		8050AA8E2466C983006A13E8 /* ModelLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ModelLoader.hpp; sourceTree = "<group>"; };
+		8050AA8F2466C984006A13E8 /* Render.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Render.hpp; sourceTree = "<group>"; };
+		8050AA912466C984006A13E8 /* VS.GLSL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VS.GLSL; sourceTree = "<group>"; };
+		8050AA922466C984006A13E8 /* Colord_FS.GLSL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colord_FS.GLSL; sourceTree = "<group>"; };
+		8050AA932466C984006A13E8 /* FS.GLSL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FS.GLSL; sourceTree = "<group>"; };
+		8050AA942466C984006A13E8 /* Colord_VS.GLSL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colord_VS.GLSL; sourceTree = "<group>"; };
+		8050AA952466C984006A13E8 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		8050AA962466C984006A13E8 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		8050AA972466C984006A13E8 /* Include.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Include.h; sourceTree = "<group>"; };
+		8050AA982466C984006A13E8 /* Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Render.cpp; sourceTree = "<group>"; };
+		8050AAAE2466C98F006A13E8 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		8050AAB02466C9A1006A13E8 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		8050AAB12466C9A1006A13E8 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.a; sourceTree = "<group>"; };
+		8050AAB62466C9D8006A13E8 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3.2/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		80E9C92E2466211A000D221B /* libLog.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libLog.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -15,16 +98,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8050AAB72466C9D8006A13E8 /* libglfw.3.3.dylib in Frameworks */,
+				8050AAB22466C9B2006A13E8 /* libGLEW.2.1.0.dylib in Frameworks */,
+				8050AAAF2466C990006A13E8 /* OpenGL.framework in Frameworks */,
+				8050AAB52466C9C4006A13E8 /* libGLEW.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8050AA802466C983006A13E8 /* ModelLoader */ = {
+			isa = PBXGroup;
+			children = (
+				8050AA812466C983006A13E8 /* DrawableObject.cpp */,
+				8050AA822466C983006A13E8 /* ModelData.hpp */,
+				8050AA832466C983006A13E8 /* ModelLoader.cpp */,
+				8050AA842466C983006A13E8 /* ColoredObject.cpp */,
+				8050AA852466C983006A13E8 /* ColorData.hpp */,
+				8050AA862466C983006A13E8 /* TexturedObject.hpp */,
+				8050AA872466C983006A13E8 /* Texture.cpp */,
+				8050AA882466C983006A13E8 /* ColorData.cpp */,
+				8050AA892466C983006A13E8 /* TexturedObject.cpp */,
+				8050AA8A2466C983006A13E8 /* Texture.hpp */,
+				8050AA8B2466C983006A13E8 /* DrawableObject.hpp */,
+				8050AA8C2466C983006A13E8 /* ModelData.cpp */,
+				8050AA8D2466C983006A13E8 /* ColoredObject.hpp */,
+				8050AA8E2466C983006A13E8 /* ModelLoader.hpp */,
+			);
+			path = ModelLoader;
+			sourceTree = "<group>";
+		};
+		8050AA902466C984006A13E8 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				8050AA912466C984006A13E8 /* VS.GLSL */,
+				8050AA922466C984006A13E8 /* Colord_FS.GLSL */,
+				8050AA932466C984006A13E8 /* FS.GLSL */,
+				8050AA942466C984006A13E8 /* Colord_VS.GLSL */,
+			);
+			path = shader;
+			sourceTree = "<group>";
+		};
+		8050AAAD2466C98F006A13E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8050AAB62466C9D8006A13E8 /* libglfw.3.3.dylib */,
+				8050AAB02466C9A1006A13E8 /* libGLEW.2.1.0.dylib */,
+				8050AAB12466C9A1006A13E8 /* libGLEW.a */,
+				8050AAAE2466C98F006A13E8 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		80E9C9252466211A000D221B = {
 			isa = PBXGroup;
 			children = (
+				8050AA7F2466C983006A13E8 /* Camera.cpp */,
+				8050AA952466C984006A13E8 /* Camera.hpp */,
+				8050AA972466C984006A13E8 /* Include.h */,
+				8050AA962466C984006A13E8 /* Log.h */,
+				8050AA802466C983006A13E8 /* ModelLoader */,
+				8050AA982466C984006A13E8 /* Render.cpp */,
+				8050AA8F2466C984006A13E8 /* Render.hpp */,
+				8050AA902466C984006A13E8 /* shader */,
 				80E9C92F2466211A000D221B /* Products */,
+				8050AAAD2466C98F006A13E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,6 +182,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8050AAAB2466C984006A13E8 /* Include.h in Headers */,
+				8050AAA82466C984006A13E8 /* Render.hpp in Headers */,
+				8050AAAA2466C984006A13E8 /* Log.h in Headers */,
+				8050AAA62466C984006A13E8 /* ColoredObject.hpp in Headers */,
+				8050AA9E2466C984006A13E8 /* ColorData.hpp in Headers */,
+				8050AAA72466C984006A13E8 /* ModelLoader.hpp in Headers */,
+				8050AA9F2466C984006A13E8 /* TexturedObject.hpp in Headers */,
+				8050AAA92466C984006A13E8 /* Camera.hpp in Headers */,
+				8050AAA32466C984006A13E8 /* Texture.hpp in Headers */,
+				8050AA9B2466C984006A13E8 /* ModelData.hpp in Headers */,
+				8050AAA42466C984006A13E8 /* DrawableObject.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +206,8 @@
 				80E9C92A2466211A000D221B /* Headers */,
 				80E9C92B2466211A000D221B /* Sources */,
 				80E9C92C2466211A000D221B /* Frameworks */,
+				8050AAB42466C9B2006A13E8 /* Embed Libraries */,
+				8050AAB92466C9EB006A13E8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -103,6 +255,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8050AAA02466C984006A13E8 /* Texture.cpp in Sources */,
+				8050AAA52466C984006A13E8 /* ModelData.cpp in Sources */,
+				8050AAA22466C984006A13E8 /* TexturedObject.cpp in Sources */,
+				8050AA9A2466C984006A13E8 /* DrawableObject.cpp in Sources */,
+				8050AA9D2466C984006A13E8 /* ColoredObject.cpp in Sources */,
+				8050AAA12466C984006A13E8 /* ColorData.cpp in Sources */,
+				8050AA992466C984006A13E8 /* Camera.cpp in Sources */,
+				8050AAAC2466C984006A13E8 /* Render.cpp in Sources */,
+				8050AA9C2466C984006A13E8 /* ModelLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +386,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/2.1.0_1/lib,
+					/usr/local/Cellar/glfw/3.3.2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -237,6 +404,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glew/2.1.0_1/lib,
+					/usr/local/Cellar/glfw/3.3.2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
