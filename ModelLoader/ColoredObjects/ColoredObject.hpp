@@ -11,7 +11,7 @@
 
 #include "Include.h"
 #include "DrawableObject.hpp"
-
+#include "ShaderConfigs.h"
 
 class ColorData;
 
@@ -27,6 +27,7 @@ public:
     ColorData* getColorData() { return colorData; }
     
     void Draw();
+    shaderConfig getShaderConfig() { return shaderConfig::coloredObject; }
 
     ~ColoredObject();
 };

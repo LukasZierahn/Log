@@ -10,6 +10,7 @@
 #include "ModelLoader.hpp"
 #include "ModelData.hpp"
 #include "Texture.hpp"
+#include "ShaderConfigs.h"
 
 #include "TexturedObject.hpp"
 
@@ -61,5 +62,8 @@ void TexturedObject::Draw() {
     
     // Draw the triangles !
     glDrawElements(GL_TRIANGLES, modelData->indexCount, GL_UNSIGNED_SHORT, nullptr);
+}
 
+TexturedObject::~TexturedObject() {
+    render->removeDrawableObject(this);
 }

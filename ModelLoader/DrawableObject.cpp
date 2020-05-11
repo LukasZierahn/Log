@@ -8,11 +8,12 @@
 
 #include "Render.hpp"
 #include "Camera.hpp"
+#include "ShaderConfigs.h"
 
 #include "DrawableObject.hpp"
 
 DrawableObject::DrawableObject(Render* render): render(render) {
-    MVPID = glGetUniformLocation(render->getMainProgram(), "MVP");
+    MVPID = glGetUniformLocation(render->getProgram(shaderConfig::texturedObject), "MVP");
     MVPmatrix = mat4(1.0f);
 }
 

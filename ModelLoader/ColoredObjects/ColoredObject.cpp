@@ -9,11 +9,12 @@
 #include "ModelData.hpp"
 #include "Render.hpp"
 #include "ColorData.hpp"
+#include "ShaderConfigs.h"
 
 #include "ColoredObject.hpp"
 
 ColoredObject::ColoredObject(Render* render): render(render), DrawableObject(render) {
-    render->addColoredObject(this);
+    render->addDrawableObject(this);
     
     colorData = new ColorData(0);
 }
@@ -47,5 +48,5 @@ void ColoredObject::Draw() {
 }
 
 ColoredObject::~ColoredObject() {
-    render->removeColordObject(this);
+    render->removeDrawableObject(this);
 }

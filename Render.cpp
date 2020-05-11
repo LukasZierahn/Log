@@ -60,82 +60,52 @@ void Render::InitGL() {
     glGenVertexArrays(1, &vertexArrayID);
     glBindVertexArray(vertexArrayID);
     
-    mainProgram = glCreateProgram();
-    GLuint VS_Id = LoadShader("shader/VS.GLSL", GL_VERTEX_SHADER);
-    GLuint FS_Id = LoadShader("shader/FS.GLSL", GL_FRAGMENT_SHADER);
-
-    glAttachShader(mainProgram, VS_Id);
-    glAttachShader(mainProgram, FS_Id);
-    glLinkProgram(mainProgram);
     
-    GLint result = GL_FALSE;
-    int infoLogLength;
-    glGetProgramiv(mainProgram, GL_LINK_STATUS, &result);
-    glGetProgramiv(mainProgram, GL_INFO_LOG_LENGTH, &infoLogLength);
-    if (infoLogLength > 0) {
-        vector<char> ProgramErrorMessage(infoLogLength+1);
-        glGetProgramInfoLog(mainProgram, infoLogLength, NULL, &ProgramErrorMessage[0]);
-        printf("%s\n", &ProgramErrorMessage[0]);
+    programs = vector<GLuint>(shaderConfigCount, 0);
+    for (int i = 0; i < shaderConfigCount; i++) {
+        programs[i] = glCreateProgram();
+        GLuint VS_Id = LoadShader(vertexShader[i].c_str(), GL_VERTEX_SHADER);
+        GLuint FS_Id = LoadShader(fragmentShader[i].c_str(), GL_FRAGMENT_SHADER);
+
+        glAttachShader(programs[i], VS_Id);
+        glAttachShader(programs[i], FS_Id);
+        glLinkProgram(programs[i]);
+        
+        GLint result = GL_FALSE;
+        int infoLogLength;
+        glGetProgramiv(programs[i], GL_LINK_STATUS, &result);
+        glGetProgramiv(programs[i], GL_INFO_LOG_LENGTH, &infoLogLength);
+        if (infoLogLength > 0) {
+            vector<char> ProgramErrorMessage(infoLogLength+1);
+            glGetProgramInfoLog(programs[i], infoLogLength, NULL, &ProgramErrorMessage[0]);
+            printf("%s\n", &ProgramErrorMessage[0]);
+        }
+        
+        
+        glDetachShader(programs[i], VS_Id);
+        glDetachShader(programs[i], FS_Id);
+        
+        glDeleteShader(VS_Id);
+        glDeleteShader(FS_Id);
     }
-    
-    
-    glDetachShader(mainProgram, VS_Id);
-    glDetachShader(mainProgram, FS_Id);
-    
-    glDeleteShader(VS_Id);
-    glDeleteShader(FS_Id);
-    
-    
-    colordProgram = glCreateProgram();
-    GLuint colordVsId = LoadShader("shader/Colord_VS.GLSL", GL_VERTEX_SHADER);
-    GLuint colordFsId = LoadShader("shader/Colord_FS.GLSL", GL_FRAGMENT_SHADER);
-
-    glAttachShader(colordProgram, colordVsId);
-    glAttachShader(colordProgram, colordFsId);
-    glLinkProgram(colordProgram);
-    
-    glGetProgramiv(colordProgram, GL_LINK_STATUS, &result);
-    glGetProgramiv(colordProgram, GL_INFO_LOG_LENGTH, &infoLogLength);
-    if (infoLogLength > 0) {
-        vector<char> ProgramErrorMessage(infoLogLength+1);
-        glGetProgramInfoLog(mainProgram, infoLogLength, NULL, &ProgramErrorMessage[0]);
-        printf("%s\n", &ProgramErrorMessage[0]);
-    }
-    
-    
-    glDetachShader(colordProgram, colordVsId);
-    glDetachShader(colordProgram, colordFsId);
-    
-    glDeleteShader(colordVsId);
-    glDeleteShader(colordFsId);
-
 }
 
 void Render::addDrawableObject(DrawableObject *drawObject) {
-    for (int i = 0; i < drawVector.size(); i++) {
-        if (drawVector[i] == drawObject) {
+    int shaderConfig = drawObject->getShaderConfig();
+    for (int i = 0; i < drawVector[shaderConfig].size(); i++) {
+        if (drawVector[shaderConfig][i] == drawObject) {
             return;
         }
     }
     
-    drawVector.push_back(drawObject);
+    drawVector[shaderConfig].push_back(drawObject);
 }
 
-void Render::addColoredObject(ColoredObject *coloredObject) {
-    for (int i = 0; i < coloredDrawVector.size(); i++) {
-        if (coloredDrawVector[i] == coloredObject) {
-            return;
-        }
-    }
-    
-    coloredDrawVector.push_back(coloredObject);
-}
-
-
-void Render::removeColordObject(ColoredObject *drawObject) {
-    for (int i = coloredDrawVector.size() - 1; i >= 0; i--) {
-        if (coloredDrawVector[i] == drawObject) {
-            coloredDrawVector.erase(coloredDrawVector.begin() + i);
+void Render::removeDrawableObject(DrawableObject *drawObject) {
+    int shaderConfig = drawObject->getShaderConfig();
+    for (int i = drawVector[shaderConfig].size() - 1; i >= 0; i--) {
+        if (drawVector[shaderConfig][i] == drawObject) {
+            drawVector[shaderConfig].erase(drawVector[shaderConfig].begin() + i);
             return;
         }
     }
@@ -143,7 +113,8 @@ void Render::removeColordObject(ColoredObject *drawObject) {
 
 Render::Render(bool show): show(show) {
     InitGL();
-    
+    drawVector = vector<vector<DrawableObject*>>(shaderConfigCount);
+
     this->show = false;
     
     modelLoader = new ModelLoader(this);
@@ -159,23 +130,19 @@ void Render::Draw() {
 
     camera->UpdateMatricies();
     
-    glUseProgram(mainProgram);
-    for (DrawableObject* drawObject : drawVector) {
-        drawObject->Draw();
+    for (int i = 0; i < drawVector.size(); i++) {
+        glUseProgram(programs[i]);
+        for (DrawableObject* drawObject : drawVector[i]) {
+            drawObject->Draw();
+        }
     }
     
-    glUseProgram(colordProgram);
-    for (DrawableObject* drawObject : coloredDrawVector) {
-        drawObject->Draw();
-    }
-
     // Swap buffers
     glfwSwapBuffers(window);
     glfwPollEvents();
 }
 
 GLuint Render::LoadShader(const char* path, GLenum type) {
-    
     string shaderCode;
     ifstream shaderStream(path, ios::in);
     if (shaderStream.is_open()){
@@ -208,7 +175,9 @@ GLuint Render::LoadShader(const char* path, GLenum type) {
 }
 
 Render::~Render() {
-    glDeleteProgram(mainProgram);
+    for (int i = 0; i < drawVector.size(); i++) {
+        glDeleteProgram(programs[i]);
+    }
     glDeleteVertexArrays(1, &vertexArrayID);
     
     delete modelLoader;

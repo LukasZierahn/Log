@@ -15,6 +15,7 @@ class Texture;
 
 #include "Include.h"
 #include "DrawableObject.hpp"
+#include "ShaderConfigs.h"
 
 class TexturedObject : public DrawableObject {
 private:    
@@ -28,6 +29,9 @@ public:
     Texture* getTexture() { return texture; };
 
     void Draw();
+    shaderConfig getShaderConfig() { return shaderConfig::texturedObject; }
+    
+    ~TexturedObject();
 };
 
 #endif /* TexturedObject_hpp */

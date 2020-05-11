@@ -12,6 +12,6 @@
 #include "Render.hpp"
 #include "ModelLoader/ModelLoader.hpp"
 #include "Camera.hpp"
-#include "ModelLoader/ColoredObject.hpp"
+#include "ModelLoader/ColoredObjects/ColoredObject.hpp"
 
 #endif /* Log_h */

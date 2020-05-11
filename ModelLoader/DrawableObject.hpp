@@ -13,6 +13,7 @@ class Render;
 class Texture;
 
 #include "Include.h"
+#include "ShaderConfigs.h"
 
 class DrawableObject {
 protected:
@@ -30,6 +31,7 @@ public:
     DrawableObject(Render* render);
     
     virtual void Draw() { cout << "Drawable Object Draw function called!" << endl; }
+    virtual shaderConfig getShaderConfig() { cout << "Drawable Object getShaderConfig function called!" << endl; return shaderConfig::coloredObject; }
     
     Render* getRender() { return render; }
     

@@ -10,6 +10,7 @@
 #define render_hpp
 
 #include "Include.h"
+#include "ShaderConfigs.h"
 
 class ColoredObject;
 class DrawableObject;
@@ -25,10 +26,8 @@ private:
     ModelLoader* modelLoader;
     Camera* camera;
     
-    GLuint colordProgram;
-    vector<ColoredObject*> coloredDrawVector;
-    GLuint mainProgram;
-    vector<DrawableObject*> drawVector;
+    vector<GLuint> programs;
+    vector<vector<DrawableObject*>> drawVector;
 
     GLFWwindow* window;
     
@@ -47,13 +46,11 @@ public:
     void setShow(bool show) { this->show = show; }
     
     void addDrawableObject(DrawableObject* drawObject);
-    void addColoredObject(ColoredObject* coloredObject);
-    
-    void removeColordObject(ColoredObject* drawObject);
+    void removeDrawableObject(DrawableObject* drawObject);
 
     int getHeight() { return height; }
     int getWidth() { return width; }
-    GLuint getMainProgram() { return mainProgram; }
+    GLuint getProgram(int program) { return programs[program]; }
     ModelLoader* getModelLoader() { return modelLoader; }
     
     Camera* getCamera() { return camera; }
